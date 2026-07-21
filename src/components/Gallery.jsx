@@ -212,7 +212,7 @@ export default function Gallery() {
             </div>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+          <div key={activeFilter} className="grid grid-cols-2 md:grid-cols-4 gap-3">
             {filtered.map((img, i) => (
               <div
                 key={img.src}
