@@ -11,20 +11,25 @@ import FloatingCTA from './components/FloatingCTA'
 
 export default function App() {
   useEffect(() => {
-    const hash = window.location.hash
-    if (!hash) return
-    const id = hash.replace('#', '')
-    let attempts = 0
-    const tryScroll = () => {
-      const el = document.getElementById(id)
-      if (el) {
-        const top = el.getBoundingClientRect().top + window.scrollY - 80
-        window.scrollTo({ top, behavior: 'smooth' })
-      } else if (attempts++ < 15) {
-        setTimeout(tryScroll, 100)
+    const scrollToHash = () => {
+      const hash = window.location.hash
+      if (!hash) return
+      const id = hash.replace('#', '')
+      let attempts = 0
+      const tryScroll = () => {
+        const el = document.getElementById(id)
+        if (el) {
+          const top = el.getBoundingClientRect().top + window.scrollY - 80
+          window.scrollTo({ top, behavior: 'smooth' })
+        } else if (attempts++ < 15) {
+          setTimeout(tryScroll, 100)
+        }
       }
+      setTimeout(tryScroll, 200)
     }
-    setTimeout(tryScroll, 200)
+    scrollToHash()
+    window.addEventListener('hashchange', scrollToHash)
+    return () => window.removeEventListener('hashchange', scrollToHash)
   }, [])
 
   return (
