@@ -25,7 +25,7 @@ export default function Navbar() {
     { label: 'Services', href: '/#services' },
     { label: 'Packages', href: '/packages' },
     { label: 'Add-Ons', href: '/packages#addons' },
-    { label: 'Gallery', href: '/gallery' },
+    { label: 'Gallery', href: '/#gallery' },
     { label: 'Contact', href: '/contact' },
   ]
 
