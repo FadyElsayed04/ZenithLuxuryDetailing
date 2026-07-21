@@ -41,9 +41,7 @@ export default function App() {
       <WhyUs />
       <div className="divider-gold" />
 
-      <div className="hidden md:block">
-        <Gallery />
-      </div>
+      <Gallery />
 
       <ServiceArea />
       
