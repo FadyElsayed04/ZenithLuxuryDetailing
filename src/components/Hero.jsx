@@ -88,13 +88,13 @@ export default function Hero() {
           className="flex flex-col sm:flex-row gap-4 justify-center items-center"
           style={{ animation: 'fadeUp 0.8s ease-out 0.8s forwards', opacity: 0 }}
         >
-          
+          <a
             href="/packages"
             className="btn-gold glow-pulse min-w-[200px] text-center"
           >
             Book Now
           </a>
-          
+          <a
             href="/packages"
             className="btn-outline-gold min-w-[200px] text-center"
           >
